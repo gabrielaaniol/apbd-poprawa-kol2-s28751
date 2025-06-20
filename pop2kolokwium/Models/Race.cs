@@ -16,6 +16,7 @@ public class Race
     [Required]
     [MaxLength(100)]
     public string Location { get; set; } = null!;
+    
     public DateTime Date { get; set; }
     
     public ICollection<TrackRace> TrackRaces { get; set; }
