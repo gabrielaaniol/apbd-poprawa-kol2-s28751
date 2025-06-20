@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using pop2kolokwium.DTOs;
 using pop2kolokwium.Service;
 
 namespace pop2kolokwium.Controllers;
@@ -28,6 +29,22 @@ public class RacersController : Controller
         catch (Exception ex)
         {
             return NotFound(ex.Message);
+        }
+    }
+    
+    
+    //POST
+    [HttpPost("/api/track-races/participants")]
+    public async Task<IActionResult> AddRacerParticipation([FromBody] RacerRequestDTO dto)
+    {
+        try
+        {
+            await _dbService.AddRacerToRaceAsync(dto);
+            return Created(); 
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
         }
     }
 }
