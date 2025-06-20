@@ -1,6 +1,10 @@
-@pop2kolokwium_HostAddress = http://localhost:5181
+@pop2kolokwium_HostAddress = http://localhost:5000
 
 GET {{pop2kolokwium_HostAddress}}/weatherforecast/
+Accept: application/json
+
+### GET: pobierz dane zawodnika i jego udział w wyścigach
+GET {{RaceCF_HostAddress}}/api/racers/1/participations
 Accept: application/json
 
 ###
