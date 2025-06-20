@@ -1,0 +1,6 @@
+@pop2kolokwium_HostAddress = http://localhost:5181
+
+GET {{pop2kolokwium_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
